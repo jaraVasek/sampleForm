@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+</head>
+
+<body>
+    <h1>Please Complete This Form</h1>
+    <form action="/submit" method="post">
+        <label for="applicantName">Applicant Name:</label>
+        <input type="text" name="applicantName" required><br><br>
+
+        <label for="ApplicantEmail"> Email address:</label>
+        <input type="email" name="ApplicantEmail" required>
+        <br><br>
+        <label for="selectedCourse">Select Your Course Choice:</label>
+        <select name="selectedCourse" required>
+            <option value=""> select a course</option>
+            <option value="Eng"> Engineering</option>
+            <option value="Law"> Law</option>
+            <option value="Hist"> History</option>
+        </select><br><br>
+
+        <label for="Gender" >Gender(Optional):</label>
+        <input type="radio" name="Gender" value="Male">Male
+        <input type="radio" name="Gender" value="Female">Female
+
+
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
