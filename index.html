@@ -2,37 +2,144 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Form</title>
+
+<style>
+
+/* Animated Background */
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg,#0b0b0b,#dadfe7,#c53b1c,#ede54b);
+    background-size:400% 400%;
+    animation:gradientBG 10s ease infinite;
+    text-align:center;
+    color:white;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Form container */
+form{
+    width:90%;
+    max-width:500px;
+    margin:40px auto;
+    padding:30px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(8px);
+
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Title */
+h1{
+    margin-top:40px;
+    animation:fadeSlide 1.5s ease forwards;
+}
+
+/* Animation */
+@keyframes fadeSlide{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Labels */
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+select{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+
+    border:none;
+    border-radius:6px;
+
+    outline:none;
+}
+
+/* Radio buttons section */
+.radio-group{
+    margin-top:10px;
+}
+
+/* Submit button */
+input[type="submit"]{
+    margin-top:25px;
+    padding:12px 20px;
+
+    background:yellow;
+    color:black;
+
+    border:none;
+    border-radius:25px;
+
+    font-weight:bold;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+/* Hover effect */
+input[type="submit"]:hover{
+    transform:scale(1.1);
+    background:white;
+}
+
+</style>
+
 </head>
 
 <body>
-    <h1>Please Complete This Form</h1>
-    <form action="/submit" method="post">
-        <label for="applicantName">Applicant Name:</label>
-        <input type="text" name="applicantName" required><br><br>
 
-        <label for="ApplicantEmail"> Email address:</label>
-        <input type="email" name="ApplicantEmail" required>
-        <br><br>
-        <label for="selectedCourse">Select Your Course Choice:</label>
-        <select name="selectedCourse" required>
-            <option value=""> select a course</option>
-            <option value="Eng"> Engineering</option>
-            <option value="Law"> Law</option>
-            <option value="Hist"> History</option>
-        </select><br><br>
+<h1>Please Complete This Form</h1>
 
-        <label for="level">Select level of study:</label>
-        <input type="radio" name="courseLevel" value="L1">Beginner
-        <input type="radio" name="courseLevel" value="L2">Advanced
-        <input type="radio" name="courseLevel" value="L3">intermediate
+<form action="/submit" method="post">
 
+<label for="applicantName">Applicant Name:</label>
+<input type="text" name="applicantName" required>
 
+<label for="ApplicantEmail">Email address:</label>
+<input type="email" name="ApplicantEmail" required>
 
-        <input type="submit" value="Submit">
-    </form>
+<label for="selectedCourse">Select Your Course Choice:</label>
+<select name="selectedCourse" required>
+<option value="">Select a course</option>
+<option value="Eng">Engineering</option>
+<option value="Law">Law</option>
+<option value="Hist">History</option>
+</select>
+
+<label>Select level of study:</label>
+
+<div class="radio-group">
+<input type="radio" name="courseLevel" value="L1"> Beginner
+<input type="radio" name="courseLevel" value="L2"> Advanced
+<input type="radio" name="courseLevel" value="L3"> Intermediate
+</div>
+
+<input type="submit" value="Submit">
+
+</form>
+
 </body>
-
 </html>
